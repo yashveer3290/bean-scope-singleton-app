@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>
+        <i style="color:green; font-size:40px;">Hotel-crud-operation</i>
+    </h1>
+</head>
+    <h1 style="color:red; font-size:30px; background-color:pink;">Add Detail of Hotel</h1>
+
+<body>
+
+    <form method="post" th:action="@{/hotels}" th:object="${hotel}">
+        <table>
+            <tr th:if="${hotel.id}">
+                <td>
+                    <label style="color:blue; font-size:20px;">ID:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" th:field="*{id}" readonly>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <label style="color:blue; font-size:20px;">Code:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="code" th:field="*{code}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">Name:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="name" th:field="*{name}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">Hotel Type:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="hotelType" th:field="*{hotelType}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">Email:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="email" th:field="*{email}">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="color:blue; font-size:20px;">Mobile:</label>
+                </td>
+                <td>
+                    <input style="background-color:orange;" type="text" name="mobile" th:field="*{mobile}">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input style="background-color:green;" type="submit" name="save" align="right"> <br>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

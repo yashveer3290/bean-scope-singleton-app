@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>
+        <i style="color:green; font-size:40px;">Customer-crud-operation</i>
+    </h1>
+
+</head>
+<h1 style="color:red; font-size:30px; background-color:pink;"> Add Detail of Customer</h1>
+
+<body style="background-color:pink;">
+
+<form method="post" th:action="@{/customers}" th:object="${customer}">
+    <table>
+        <tr th:if="${customer.id}">
+            <td>
+                <label style=" color:blue; font-size:20px;">ID:</label>
+            </td>
+            <td>
+                <input style="background-color:orange;" type="text"  th:field="*{id}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="color:blue; font-size:20px;">First Name:</label>
+            </td>
+            <td>
+                <input style="background-color:orange;" type="text" name="firstName" th:field="*{firstName}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="color:blue; font-size:20px;">Last Name:</label>
+            </td>
+            <td>
+                <input style="background-color:orange;" type="text" name="lastName:" th:field="*{lastName}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="color:blue; font-size:20px;">Email:</label>
+            </td>
+            <td>
+                <input style="background-color:orange;" type="text" name="email" th:field="*{email}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="color:blue; font-size:20px;">Mobile:</label>
+            </td>
+            <td>
+                <input style="background-color:orange;" type="text" name="mobile" th:field="*{mobile}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label style="color:blue; font-size:20px;">Gender:</label>
+            </td>
+            <td>
+                <input type="radio" name="gender" th:field="*{gender}" value="Male">Male<br>
+                <input type="radio" name="gender" th:field="*{gender}" value="Female">Female<br>
+                <input type="radio" name="gender" th:field="*{gender}" value="Other">Other<br>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input style="background-color:green;" type="submit" name="save" align="right"> <br>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+
+
